@@ -14,19 +14,9 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
   
 body {
     background-color: #f9f9f9;
-    font-family: Helvetica;
-}
-.my-logo,
-footer {
-  width: 100%;
-  padding-left: 1%;
-  margin-bottom: 8px;
-  background-color: #78baff;
-  border: 1px solid #78baff;
 }
 body > header > h1 > a {
 color: #ffffff;
-font-weight: 400;
 }
 footer {
   margin-top: 4px;
@@ -34,6 +24,12 @@ footer {
 
 a {
   text-decoration: none;
+  font-family: 'Space Mono';
+  font-size: 16px;
+  color: black;
+}
+a:hover {
+  color: black;
 }
 
 /* 'Margin: 0 auto' centers block content on the page */
@@ -88,7 +84,61 @@ a {
 }
 
 .page-id-10 .entry-title {
+  display: none; 
+}
+.my-logo {
+  text-align: left;
+  padding: 20px 0; /* Ajustez la marge supérieure et inférieure selon vos besoins */
+  position: relative;
+  top: 10px;
+  left: 5%;
+  width: 75%;
+}
+  
+.my-logo img {
+    max-width: 100%; /* Assurez-vous que l'image ne dépasse pas la largeur du conteneur */
+    height: auto;
+}
+  
+.header-menu-class {
+  /* Styles pour le menu du header */
+  list-style-type: none;
+  text-align: right;
+  position: relative;
+  top: 10px;
+}
 
-    display: none;
-    
-    }
+.header-menu-class li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.footer-menu-class {
+  /* Styles pour le menu du footer */
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  height: 40px;
+  padding-top: 15px;
+  border-top: 1px solid;
+}
+
+.footer-menu-class li {
+  display: inline;
+  margin-right: 20px;
+}
+
+@font-face {
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/fonts/Space_Mono/SpaceMono-Regular.woff') format('woff');
+}
+
+.entete {
+  height: 80px;
+  display: flex;
+}
+
+/* modal contact */

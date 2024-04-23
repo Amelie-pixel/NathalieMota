@@ -22,6 +22,20 @@ add_action( 'widgets_init', 'add_Widget_Support' );
 // Register a new navigation menu
 function add_Main_Nav() {
     register_nav_menu('header-menu',__( 'Header Menu' ));
-  }
+}
   // Hook to the init action hook, run our navigation menu function
-  add_action( 'init', 'add_Main_Nav' );
+add_action( 'init', 'add_Main_Nav' );
+// Register a new navigation menu for footer
+function add_Footer_Nav() {
+    register_nav_menu('footer-menu',__( 'Footer Menu' ));
+}
+// Hook to the init action hook, run our footer navigation menu function
+add_action( 'init', 'add_Footer_Nav' );
+function add_custom_scripts() {
+    // Enregistrer le script
+    wp_register_script('custom-scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), null, true);
+    
+    // Charger le script
+    wp_enqueue_script('custom-scripts');
+}
+add_action('wp_enqueue_scripts', 'add_custom_scripts');
