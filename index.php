@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <main class="wrap">
-  <!--<section class="content-area content-thin">
+  <section class="content-area content-thin">
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
       <article class="article-loop">
         <header>
@@ -14,6 +14,6 @@
         <p>Sorry, no posts were found!</p>
       </article>
 <?php endif; ?>
-  </section><?php get_sidebar(); ?>-->
+  </section><?php get_sidebar(); ?>
 </main>
 <?php get_footer(); ?>
