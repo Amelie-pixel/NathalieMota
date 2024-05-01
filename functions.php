@@ -1,4 +1,5 @@
 <?php
+
 // This function enqueues the Normalize.css for use. The first parameter is a name for the stylesheet, the second is the URL. Here we
 // use an online version of the css file.
 function add_normalize_CSS() {
@@ -17,6 +18,7 @@ function add_widget_Support() {
 }
 // Hook the widget initiation and run our function
 add_action( 'widgets_init', 'add_Widget_Support' );
+
 
 // Register a new navigation menu
 function add_Main_Nav() {
@@ -38,3 +40,6 @@ function add_custom_scripts() {
     wp_enqueue_script('custom-scripts');
 }
 add_action('wp_enqueue_scripts', 'add_custom_scripts');
+
+// Ajouter le support des images mises en avant (post thumbnails)
+add_theme_support( 'post-thumbnails' );

@@ -91,7 +91,7 @@ text-align: left;
 padding: 20px 0; /* Ajustez la marge supérieure et inférieure selon vos besoins */
 position: relative;
 top: 10px;
-left: 5%;
+left: 15%;
 width: 75%;
 }
 
@@ -106,6 +106,7 @@ list-style-type: none;
 text-align: right;
 position: relative;
 top: 10px;
+right: 50%;
 }
 
 .header-menu-class li {
@@ -177,6 +178,7 @@ display: flex;
   border: none;
   position: relative;
   top: -2px;
+  right: 6%;
 }
 
 /* The Close Button */
@@ -273,4 +275,110 @@ padding-top: 20px;
 @keyframes animatetop {
   from {top: 300px; opacity: 0}
   to {top: 0; opacity: 1}
+}
+
+
+
+/* code por la page détail */
+
+.flex-Description{
+  justify-content: flex-end;
+  border-bottom: 1px solid black;
+}
+.flex-Description ul {
+  list-style-type : none;
+  padding-left: 0;
+}
+.flex-Photo {
+  position: relative;
+  display: flex;
+  object-fit: contain;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  margin-left: 10px;
+}
+#myBtn2 {
+  position: relative;
+  padding-left: 6%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 6%;
+  color: black;
+  background-color: #D8D8D8;
+  font-family: 'Space Mono';
+  border: none;
+  border-radius: 3px;
+  font-size: 12px;
+  right: 17.5%;
+}
+.aimer_aussi {
+  position: relative;
+  width: 23%;
+  font-family: 'Space Mono';
+  text-transform: uppercase;
+  font-size: 18px;
+}
+.arrow_left {
+  text-align: center;
+  padding: 0 10px;
+}
+.previous_next_post {
+  position: relative;
+  left: 13%;
+}
+.arrow_right {
+  text-align: center;
+  padding: 0 10px;
+}
+.detail-photo {
+  text-transform: uppercase;
+}
+.deuxieme_partie {
+  padding: 30px 0 30px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+.contenu {
+  width: 100%;
+  max-width: 1190px;
+  margin: auto;
+  padding: 30px 20px 0;
+  font-family: 'Space Mono';
+
+}
+.flexcolumn {
+  display: flex;
+  flex-direction: column;
+}
+.flexrow {
+  display: flex;
+  flex-direction: row;
+}
+.flex-Description, .flex-Photo {
+  max-height: 890px;
+  width: 50%;
+}
+.previous-thumbnail {
+  margin-right: 9%;
+}
+
+.photo_next_previous {
+  justify-content: right;
+}
+
+.deux_post {
+  gap: 20px;
+  padding-top: 40px;
+  padding-bottom: 120px;
+}
+.photo-block__picture__img {
+  width: 564px;
+  height: 495px;
+  object-fit: cover;
+}
+.troisieme_partie {
+  padding-top: 40px;
 }
