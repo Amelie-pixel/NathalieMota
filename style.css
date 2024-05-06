@@ -137,6 +137,12 @@ font-weight: 400;
 src: url('./assets/fonts/Space_Mono/SpaceMono-Regular.woff') format('woff');
 }
 @font-face {
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./assets/fonts/Space_Mono/SpaceMono-Regular.woff') format('woff');
+  }
+@font-face {
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 500;
@@ -381,4 +387,59 @@ padding-top: 20px;
 }
 .troisieme_partie {
   padding-top: 40px;
+}
+
+
+/** index css **/
+.index_background {
+  width: 101.85%;
+  height: 962px;
+  background-size: cover;
+  background-position: center;
+  margin-top: -50px;
+  margin-left: -17px;
+}
+.title_photo_event {
+  display: flex;
+  justify-content: center;
+  font-family: 'Space Mono';
+  font-weight: 700;
+  font-style: italic;
+  font-size: 96px;
+  text-transform: uppercase;
+  -webkit-text-stroke: 2px white;
+  color: transparent;
+  padding-top: 400px;
+}
+
+.photo-box {
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 100px;
+}
+.photo_section {
+  width: 100%;
+}
+.groupe {
+  width: 91%;
+  padding-left: 170px;
+}
+.charger_plus {
+  padding-left: 5%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 5%;
+  color: black;
+  background-color: #D8D8D8;
+  font-family: 'Space Mono';
+  border: none;
+  border-radius: 3px;
+  font-size: 12px;
+  right: 17.5%;
+}
+.btn_chargerplus {
+  justify-content: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }

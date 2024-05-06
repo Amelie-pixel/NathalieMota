@@ -1,4 +1,4 @@
-// Get the modal
+// Bouton header
 var modal = document.getElementById('myModal');
 
 // Get the button that opens the modal
@@ -25,7 +25,7 @@ window.onclick = function(event) {
 }
 
 
-// Get the modal
+// Bouton déscription image
 var modal = document.getElementById('myModal');
 
 // Get the button that opens the modal
