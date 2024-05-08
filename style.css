@@ -1,8 +1,8 @@
 /*
 Theme Name: Nathalie Mota
-Author: Hostinger
+Author: Amélie
 Author URI: http://www.hostinger.com/tutorials
-Description: My first responsive HTML5 theme
+Description: Site de photos
 Version: 1.0
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -458,9 +458,9 @@ padding-top: 20px;
   gap: 15px;
   flex-wrap: wrap;
   justify-content: center;
-  padding-top: 100px;
+  padding-top: 50px;
 }
-.photo_section {
+#photo_section {
   width: 100%;
 }
 .groupe {
@@ -484,4 +484,24 @@ padding-top: 20px;
   justify-content: center;
   padding-top: 50px;
   padding-bottom: 50px;
+}
+
+#filter-form {
+  justify-content: center;
+  display: flex;
+  padding-top: 100px;
+}
+#category-select, #format-select, #order-select {
+  font-family: 'Poppins';
+  font-size: 12px;
+  line-height: 18px;
+  padding-bottom: 0.5%;
+  padding-right: 7%;
+  padding-top: 0.5%;
+  padding-left: 1%;
+  border-radius: 10px;
+  border: 2px solid #B8BBC2;
+}
+#format-select {
+  margin-right: 22%;
 }
