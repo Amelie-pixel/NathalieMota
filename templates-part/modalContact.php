@@ -1,6 +1,5 @@
 <!-- The Modal -->
 <div id="myModal" class="modal">
-
   <!-- Modal content -->
   <div class="modal-content">
     <div class="modal-header">
@@ -20,5 +19,4 @@
     <div class="modal-footer">
     </div>
   </div>
-
 </div>

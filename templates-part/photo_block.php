@@ -1,3 +1,4 @@
+
 <div class="photo-block__picture">
     <div class="photo-block__picture__img_container">
         <img src="<?php the_post_thumbnail_url(); ?>" class="photo-block__picture__img">
@@ -6,7 +7,7 @@
             <a href="<?php echo get_permalink(get_the_ID()); ?>">
                 <img class="oeil" src="<?php echo get_stylesheet_directory_uri() ;?>/assets/eye.svg" alt="Oeil">
             </a>
-                <img class="fullscreen" src="<?php echo get_stylesheet_directory_uri() ;?>/assets/fullscreen.svg" alt="pleins écran">
+            <img id="fullscreen" class="fullscreen open-lightbox" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/fullscreen.svg" alt="pleins écran" onclick="openLightbox('<?php the_post_thumbnail_url(); ?>', '<?php echo get_field('reference'); ?>', '<?php echo implode(', ', wp_list_pluck(get_the_terms(get_the_ID(), 'categorie'), 'name')); ?>')">
             </div>
             <div class="ref_cat flexrow">
                 <p class="photo_reference_hover">

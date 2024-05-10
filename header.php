@@ -10,8 +10,10 @@
 <body <?php body_class(); ?>>
   <header class="entete">
     <a class="my-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="http://nathaliemota.local/wp-content/uploads/2024/04/Logo.png" alt="<?php bloginfo('name'); ?>"></a>
+    <div class="menu-header">
     <?php wp_nav_menu( array( 'theme_location' => 'header-menu', 'menu_class' => 'header-menu-class' ) ); ?>
     <!-- Trigger/Open The Modal -->
     <button id="myBtn">CONTACT</button>
+    </div>
   </header>
 

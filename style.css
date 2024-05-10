@@ -91,8 +91,6 @@ text-align: left;
 padding: 20px 0; /* Ajustez la marge supérieure et inférieure selon vos besoins */
 position: relative;
 top: 10px;
-left: 15%;
-width: 75%;
 }
 
 .my-logo img {
@@ -106,7 +104,6 @@ list-style-type: none;
 text-align: right;
 position: relative;
 top: 10px;
-right: 50%;
 }
 
 .header-menu-class li {
@@ -152,6 +149,13 @@ src: url('./assets/fonts/Space_Mono/SpaceMono-Regular.woff') format('woff');
 .entete {
 height: 80px;
 display: flex;
+width: 60%;
+justify-content: space-between;
+position: relative;
+left: 20%;
+}
+.menu-header {
+  display: flex;
 }
 
 /* modal contact */
@@ -184,7 +188,7 @@ display: flex;
   border: none;
   position: relative;
   top: -2px;
-  right: 6%;
+  cursor: pointer;
 }
 
 /* The Close Button */
@@ -479,6 +483,7 @@ padding-top: 20px;
   border-radius: 3px;
   font-size: 12px;
   right: 17.5%;
+  cursor: pointer;
 }
 .btn_chargerplus {
   justify-content: center;
@@ -501,7 +506,92 @@ padding-top: 20px;
   padding-left: 1%;
   border-radius: 10px;
   border: 2px solid #B8BBC2;
+  cursor: pointer;
 }
 #format-select {
-  margin-right: 22%;
+  margin-right: 20%;
+}
+#category-select {
+  margin-right: 2%;
+}
+
+
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.9);
+  text-align: center;
+}
+.lightbox-img {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 800px;
+}
+.close {
+  position: absolute;
+  top: 50px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+.open-lightbox {
+  cursor: pointer; /* Change l'aspect de la souris en "pointer" */
+}
+.lightbox-categorie, .lightbox-reference {
+  color: white;
+}
+.lightbox-content {
+  margin: auto;
+  max-width: 89%;
+  max-height: 60%;
+  font-family: 'Space Mono';
+  justify-content: space-between;
+}
+.lightbox-categorie {
+  position: relative;
+  text-transform: uppercase;
+}
+.lightbox-nav {
+  max-width: 90%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  left: 5%;
+}
+/*.prev, .next {
+  color: white;
+  position: relative;
+  top: 350px;
+  height: 20px;
+}*/
+
+.prev, .next {
+  color: white;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer; /* Ajout d'un curseur pointer pour indiquer que les flèches sont cliquables */
+}
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
 }

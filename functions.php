@@ -33,13 +33,18 @@ function add_Footer_Nav() {
 // Hook to the init action hook, run our footer navigation menu function
 add_action( 'init', 'add_Footer_Nav' );
 function add_custom_scripts() {
-    // Enregistrer le script
+    // Enregistrer le script custom-scripts
     wp_register_script('custom-scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), null, true);
     
-    // Charger le script
+    // Enregistrer le script lightbox
+    wp_register_script('lightbox', get_template_directory_uri() . '/js/lightbox.js', array('jquery'), null, true);
+
+    // Charger les scripts
     wp_enqueue_script('custom-scripts');
+    wp_enqueue_script('lightbox');
 }
 add_action('wp_enqueue_scripts', 'add_custom_scripts');
+
 
 // Ajouter le support des images mises en avant (post thumbnails)
 add_theme_support( 'post-thumbnails' );
