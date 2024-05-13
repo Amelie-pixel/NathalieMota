@@ -74,8 +74,26 @@
 
 .prev {
     left: 10px;
+    font-family: 'Space Mono';
+    font-weight: 400 !important;
 }
   
 .next {
-    right: 10px;
+    right: 90px;
+    font-family: 'Space Mono';
+    font-weight: 400 !important;
+}
+
+.prevbutton {
+    position: relative;
+    right: 20%;
+    top: 4px;
+}
+.nextbutton {
+    position: relative;
+    left: 120%;
+    top: 4px;
+}
+.prev:hover, .next:hover{
+    font-weight: 700 !important;
 }

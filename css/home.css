@@ -49,11 +49,14 @@
     font-size: 12px;
     right: 17.5%;
     cursor: pointer;
+    transition: all 0.3s ease; 
+    transition-delay: 0.2s; 
 }
 
 .charger_plus:hover {
     color: white;
     background-color: black;
+    transition-delay: 0s;
 }
 
 .btn_chargerplus {

@@ -16,7 +16,18 @@
     position: relative;
     top: 10px;
 }
-    
+.header-menu-class a {
+    text-decoration: none;
+    font-family: 'Space Mono';
+    font-size: 16px;
+    color: black;
+    font-weight: 400 !important;
+    text-transform: uppercase;   
+}
+
+.header-menu-class a:hover {
+    font-weight: 700 !important;
+}
 .header-menu-class li {
     display: inline;
     margin-right: 20px;
@@ -35,6 +46,13 @@
 .footer-menu-class li {
     display: inline;
     margin-right: 20px;
+}
+.footer-menu-class a {
+    font-weight: 400;
+    text-transform: uppercase;   
+}
+.footer-menu-class a:hover {
+    font-weight: 700;
 }
 .entete {
     height: 80px;

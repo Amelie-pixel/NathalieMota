@@ -98,9 +98,9 @@ src: url('./assets/fonts/Space_Mono/SpaceMono-Regular.woff') format('woff');
 
 @font-face {
   font-family: 'Space Mono';
-  font-style: normal;
+  font-style: bold;
   font-weight: 700;
-  src: url('./assets/fonts/Space_Mono/SpaceMono-Regular.woff') format('woff');
+  src: url('./assets/fonts/Space_Mono/SpaceMono-Bold.woff') format('woff');
 }
 
 @font-face {

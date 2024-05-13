@@ -28,6 +28,9 @@
     top: -2px;
     cursor: pointer;
 }
+#myBtn:hover {
+    font-weight: 700;
+}
 
 .close {
     color: #aaa;
@@ -88,6 +91,12 @@
     color: grey;
 }
 
+#wpcf7-f9-o1 input[type="submit"]:hover {
+    background-color: black;
+    color: white;
+    transition-delay: 0s;
+}
+
 #wpcf7-f9-o1 textarea {
     height: 210px;
     border: 1px solid;
@@ -112,6 +121,9 @@
     font-family: 'Space Mono';
     border: none;
     border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.3s ease; 
+    transition-delay: 0.2s; 
 }
 
 @-webkit-keyframes animatetop {
@@ -126,17 +138,17 @@
 
 #myBtn2 {
     position: relative;
-    padding-left: 6%;
+    padding-left: 8%;
     padding-top: 15px;
     padding-bottom: 15px;
-    padding-right: 6%;
+    padding-right: 8%;
     color: black;
     background-color: #D8D8D8;
     font-family: 'Space Mono';
     border: none;
     border-radius: 3px;
     font-size: 12px;
-    right: 17.5%;
+    right: 16.5%;
     cursor: pointer;
     transition: all 0.3s ease; /* Animation fluide de transition */
     transition-delay: 0.2s; /* Délai de transition de 0.2 secondes */
