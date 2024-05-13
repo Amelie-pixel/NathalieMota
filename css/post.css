@@ -105,21 +105,6 @@
     padding-bottom: 120px;
 }
   
-.photo-block__picture__img {
-    width: 564px;
-    height: 495px;
-    object-fit: cover;
-}
-
-.photo-block__picture__img_container {
-    height: 495px;
-}
-
-.photo-block__picture {
-   position: relative;
-   height: 495px;
-}
-  
 .troisieme_partie {
     padding-top: 40px;
 }
