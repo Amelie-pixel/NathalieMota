@@ -1,4 +1,3 @@
-
 <div class="photo-block__picture">
     <div class="photo-block__picture__img_container">
         <img src="<?php the_post_thumbnail_url(); ?>" class="photo-block__picture__img">

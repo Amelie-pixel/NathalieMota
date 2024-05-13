@@ -4,9 +4,9 @@
         <div class="lightbox-nav">
     <div class="lightbox-nav2">
         <div class="flexrow">
-            <span class="prev" id="prevButton"><img src="<?php echo get_stylesheet_directory_uri() ;?>/assets/NavigationArrowsLeft.png" alt="Précédente"></span>
+            <span class="prev" id="prevButton"><img class="prevbutton" src="<?php echo get_stylesheet_directory_uri() ;?>/assets/line6.png" alt="Précédente">Précédente</span>
             <img src="<?php the_post_thumbnail_url(); ?>" class="lightbox-img" id="lightboxImg">
-            <span class="next" id="nextButton"><img src="<?php echo get_stylesheet_directory_uri() ;?>/assets/NavigationArrowsRight.png" alt="Suivante"></span>
+            <span class="next" id="nextButton"><img class="nextbutton" src="<?php echo get_stylesheet_directory_uri() ;?>/assets/line7.png" alt="Suivante">Suivante</span>
         </div>
         <div class="lightbox-content flexrow">
             <p class="lightbox-reference"><?php echo get_field('reference'); ?></p>
