@@ -1,0 +1,51 @@
+.my-logo {
+    text-align: left;
+    padding: 20px 0;
+    position: relative;
+    top: 10px;
+}
+    
+.my-logo img {
+    max-width: 100%;
+    height: auto;
+}
+    
+.header-menu-class {
+    list-style-type: none;
+    text-align: right;
+    position: relative;
+    top: 10px;
+}
+    
+.header-menu-class li {
+    display: inline;
+    margin-right: 20px;
+}
+    
+.footer-menu-class {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    height: 40px;
+    padding-top: 15px;
+    border-top: 1px solid;
+}
+    
+.footer-menu-class li {
+    display: inline;
+    margin-right: 20px;
+}
+.entete {
+    height: 80px;
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+    position: relative;
+    left: 20%;
+}
+
+.menu-header {
+    display: flex;
+}
+    
