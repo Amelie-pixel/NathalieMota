@@ -113,6 +113,22 @@ function custom_filter_photos() {
 
     wp_die(); // Terminer la réponse Ajax
 }
+function add_custom_styles() {
+    // Enregistrer le fichier modal.css
+    wp_register_style('modal-styles', get_template_directory_uri() . '/css/modal.css', array(), null);
+    wp_register_style('home-styles', get_template_directory_uri() . '/css/home.css', array(), null);
+    wp_register_style('post-styles', get_template_directory_uri() . '/css/post.css', array(), null);
+    wp_register_style('HeaderFooter-styles', get_template_directory_uri() . '/css/HeaderFooter.css', array(), null);
+    wp_register_style('lightbox-styles', get_template_directory_uri() . '/css/lightbox.css', array(), null);
+
+    // Charger les styles
+    wp_enqueue_style('modal-styles');
+    wp_enqueue_style('home-styles');
+    wp_enqueue_style('post-styles');
+    wp_enqueue_style('lightbox-styles');
+    wp_enqueue_style('HeaderFooter-styles');
+}
+add_action('wp_enqueue_scripts', 'add_custom_styles');
 
 
 
