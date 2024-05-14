@@ -118,6 +118,7 @@ function add_custom_styles() {
     wp_register_style('HeaderFooter-styles', get_template_directory_uri() . '/css/HeaderFooter.css', array(), null);
     wp_register_style('lightbox-styles', get_template_directory_uri() . '/css/lightbox.css', array(), null);
     wp_register_style('photo_block-styles', get_template_directory_uri() . '/css/photo_block.css', array(), null);
+    wp_register_style('responsive-styles', get_template_directory_uri() . '/css/responsive.css', array(), null);
 
 
     wp_enqueue_style('modal-styles');
@@ -126,5 +127,6 @@ function add_custom_styles() {
     wp_enqueue_style('lightbox-styles');
     wp_enqueue_style('HeaderFooter-styles');
     wp_enqueue_style('photo_block-styles');
+    wp_enqueue_style('responsive-styles');
 }
 add_action('wp_enqueue_scripts', 'add_custom_styles');

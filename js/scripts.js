@@ -1,3 +1,42 @@
+document.addEventListener('DOMContentLoaded', function () {
+    const burgerIcon = document.getElementById('burger-icon');  //récupère toute les informations
+    const sideNav = document.getElementById('mySidenav');
+    const sideNavImages = sideNav.querySelectorAll('img');  
+
+    // Fonction pour ouvrir/fermer la navigation
+    function toggleSideNav() {
+        burgerIcon.classList.toggle('active');
+        sideNav.classList.toggle('active');
+        sideNav.classList.remove('hidden'); // Retire la classe 'hidden'
+        
+        sideNavImages.forEach(image => {  // Ajouter ou supprimer la classe 'active' pour chaque image dans le menu
+            image.classList.toggle('active');
+        });
+        if (!sideNav.classList.contains('active')) { // il se déplace vers le haut à la fin de l'animation de fermeture afin de ne plus être visible
+            setTimeout(() => {
+              sideNav.classList.add('moved');
+            }, 2000);
+          } else {
+            sideNav.classList.remove('moved');
+          }
+    }
+
+    // Empêche d'autres actions indésirables ailleurs sur la page, mais se concentrera uniquement sur l'ouverture ou la fermeture de la barre de navigation.
+    burgerIcon.addEventListener('click', function (event) {
+        event.stopPropagation(); 
+        toggleSideNav();
+    });
+
+    // Fermer la navigation lorsqu'un lien à l'intérieur est cliqué
+    sideNav.addEventListener('click', function (event) {
+        if (event.target.tagName === 'A') {  // Vérifie si c'est un élément A qui a été cliqué
+            toggleSideNav();
+        }
+    });
+
+});
+
+
 jQuery(document).ready(function($) {
     $('#filter-form select').change(function() {
         var formData = $('#filter-form').serialize(); // Récupérer les données du formulaire

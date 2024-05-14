@@ -2,6 +2,10 @@
     justify-content: flex-end;
     border-bottom: 1px solid black;
 }
+.photo-info {
+    display: flex;
+    flex-direction: row;
+}
 
 .flex-Description ul {
     list-style-type : none;
@@ -53,6 +57,8 @@
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid black;
+    display: flex;
+    flex-direction: row;
 }
 
 .contenu {

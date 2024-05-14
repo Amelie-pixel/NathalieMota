@@ -25,6 +25,8 @@
     flex-wrap: wrap;
     justify-content: center;
     padding-top: 50px;
+    display: flex;
+    flex-direction: row;
 }
 
 #photo_section {

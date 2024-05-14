@@ -65,7 +65,7 @@ if ($random_image) {
         // The Loop
         if ( $all_photos->have_posts() ){
       ?>
-      <div id="results-container" class="photo-box flexrow">
+      <div id="results-container" class="photo-box">
       <?php
         while ( $all_photos->have_posts() ) { 
             $all_photos->the_post();

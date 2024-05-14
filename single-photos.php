@@ -3,7 +3,7 @@
 
 <div class="contenu">
     <div class="detail-photo flexcolumn">
-        <div class="photo-info flexrow">
+        <div class="photo-info">
         <div class="flex-Description flexcolumn">
             <h1><?php the_title(); ?></h1>
             <ul class="flexcolumn">
@@ -47,7 +47,7 @@
         <?php endwhile; ?>
         </div>
     </div>
-    <div class="deuxieme_partie flexrow">
+    <div class="deuxieme_partie">
         <p> Cette photo vous intéresse ?</p>
         <!-- Trigger/Open The Modal -->
         <button id="myBtn2">Contact</button>

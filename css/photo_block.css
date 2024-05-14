@@ -1,16 +1,16 @@
 .photo-block__picture__img {
     width: 29.6vw;
-    height: 500px;
+    height: 60vh;
     object-fit: cover;
 }
 
 .photo-block__picture__img_container {
-    height: 495px;
+    height: 60vh;
 }
 
 .photo-block__picture {
    position: relative;
-   height: 495px;
+   height: 60vh;
 }
 
 .oeil {
@@ -27,7 +27,7 @@
 
 .ref_cat {
     position: relative;
-    top: 360px;
+    top: 410px;
     color: white;
     font-family: 'Space Mono';
     font-size: 14px;
@@ -42,8 +42,8 @@
     opacity: 0; 
     background: rgba(57, 57, 57, 0.5);
     position: relative;
-    bottom: 505px;
-    height: 498px;
+    bottom: 60.5vh;
+    height: 60vh;
     transition: opacity 0.4s ease, visibility 0.4s ease; 
     transition-delay: 0.2s;
 }

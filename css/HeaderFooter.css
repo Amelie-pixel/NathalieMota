@@ -67,3 +67,101 @@
     display: flex;
 }
     
+.sidenav.active img, .sidenav.active p{
+    display: block;
+}
+  
+.sidenav.hidden {
+    display: none;
+    opacity: 1;
+}
+  
+.sidenav.moved {
+    transform: translateY(-1500px);
+}
+  
+.sidenav {
+    right: -140px;
+    opacity: 0;
+    z-index: 1;
+    height: 830%;
+    width: 169.2%;
+    position: absolute;
+    top: 94px;
+    overflow: hidden;
+    background-color: #E00000;
+    animation: mountedNav 2s ease;
+}
+@keyframes mountedNav {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    } 
+    100% {
+      transform: translateY(-300px);  
+      opacity: 0;
+    }
+  }
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 64px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav .active {  
+    left: 0;
+    height: 869px;
+    opacity: 1;
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    animation: goesdown 2s ease;
+    overflow: hidden;
+}
+@keyframes goesdown {
+    0% {
+      transform: translateY(-300px);
+      opacity: 0;
+    }  
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+.main-navigation {
+    z-index: 1000;
+    display: flex;
+}
+.burger-icon {
+    position: relative;
+    left: 65%;
+}
+
+.burger-icon span {
+    position: relative;
+    left: 0px;
+    top: 17px;
+    display: block;
+    width: 40px;
+    height: 2px;
+    background-color: black;
+    margin: 9px 0;
+}
+
+  
+  /* Styles pour transformer l'icône en croix */
+  .burger-icon.active span:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 7px);
+  }
+  
+  .burger-icon.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .burger-icon.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+  }
