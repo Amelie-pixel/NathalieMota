@@ -3,7 +3,7 @@
         <span class="close" onclick="closeLightbox()">&times;</span>
         <div class="lightbox-nav">
     <div class="lightbox-nav2">
-        <div class="flexrow">
+        <div class="contentlightbox">
             <span class="prev" id="prevButton"><img class="prevbutton" src="<?php echo get_stylesheet_directory_uri() ;?>/assets/line6.png" alt="Précédente">Précédente</span>
             <img src="<?php the_post_thumbnail_url(); ?>" class="lightbox-img" id="lightboxImg">
             <span class="next" id="nextButton"><img class="nextbutton" src="<?php echo get_stylesheet_directory_uri() ;?>/assets/line7.png" alt="Suivante">Suivante</span>

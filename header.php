@@ -17,9 +17,11 @@
     </div>  
     <nav id="site-navigation" class="main-navigation">  
         <div id="mySidenav" class="sidenav hidden"> 
+          <div class="blocknav">
         <?php wp_nav_menu( array( 'theme_location' => 'header-menu', 'menu_class' => 'header-menu-class' ) ); ?>
         <!-- Trigger/Open The Modal -->
-        <button id="myBtn" class="BtnSidenav">CONTACT</button>  
+        <button id="myBtn3">CONTACT</button>
+        </div> 
         </div>
         <span id="burger-icon" class="burger-icon">
             <span></span>

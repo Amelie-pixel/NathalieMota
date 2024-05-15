@@ -27,6 +27,7 @@
     font-size: 40px;
     font-weight: bold;
     transition: 0.3s;
+    cursor: pointer;
 }
 
 .close:hover, .close2:focus {
@@ -62,6 +63,7 @@
     justify-content: center;
     position: relative;
     left: 5%;
+    padding-top: 50px;
 }
   
 .prev, .next {
@@ -96,4 +98,8 @@
 }
 .prev:hover, .next:hover{
     font-weight: 700 !important;
+}
+.contentlightbox {
+    display: flex;
+    flex-direction: row;
 }
