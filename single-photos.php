@@ -9,34 +9,24 @@
             <ul class="flexcolumn">
                 <li><p> Référence : <span id="reference-photo"><?php echo get_field('reference'); ?></span></p></li>
                 <li><?php
-                    // Récupérer les termes de la taxonomie "categorie" pour le type de publication personnalisé "photos"
                     $terms = get_the_terms( $post->ID, 'categorie' );
-
-                    // Si des termes existent et ne sont pas une erreur
                     if ( $terms && ! is_wp_error( $terms ) ) :
-                        // Boucle à travers chaque terme
                         foreach ( $terms as $term ) :
                     ?>
-                            <!-- Afficher le lien vers le terme -->
                             <a href="<?php echo get_term_link( $term ); ?>"><p>Catégories : <?php echo $term->name; ?></p></a>
                     <?php
-                        endforeach; // Fin de la boucle
-                    endif; // Fin de la vérification des termes
+                        endforeach;
+                    endif;
                     ?> </li>
                 <li><?php
-                    // Récupérer les termes de la taxonomie "formats" pour le type de publication personnalisé "photos"
                     $terms = get_the_terms( $post->ID, 'formats' );
-
-                    // Si des termes existent et ne sont pas une erreur
                     if ( $terms && ! is_wp_error( $terms ) ) :
-                        // Boucle à travers chaque terme
                         foreach ( $terms as $term ) :
                     ?>
-                            <!-- Afficher le lien vers le terme -->
                             <a href="<?php echo get_term_link( $term ); ?>"><p>Formats : <?php echo $term->name; ?></p></a>
                     <?php
-                        endforeach; // Fin de la boucle
-                    endif; // Fin de la vérification des termes
+                        endforeach;
+                    endif;
                     ?> </li>
                 <li><p> Type : <?php echo get_field('type'); ?></p></li>
                 <li><p> Années : <?php echo get_the_time('Y'); ?></p></li>
@@ -58,14 +48,14 @@
                     $next_post = get_next_post();
 
                     if (!empty($previous_post)) {
-                            $previous_thumbnail = get_the_post_thumbnail($previous_post, 'thumbnail', array('class' => 'previous-thumbnail'));
+                            $previous_thumbnail = get_the_post_thumbnail($previous_post, 'thumbnail', array('class' => 'previous-thumbnail hidden-thumbnail'));
                             if (!empty($previous_thumbnail)) {
                                 echo $previous_thumbnail;
                             }
                     }
 
                     if (!empty($next_post)) { 
-                            $next_thumbnail = get_the_post_thumbnail($next_post, 'thumbnail', array('class' => 'next-thumbnail'));
+                            $next_thumbnail = get_the_post_thumbnail($next_post, 'thumbnail', array('class' => 'next-thumbnail hidden-thumbnail'));
                             if (!empty($next_thumbnail)) {
                                 echo $next_thumbnail;
                             }

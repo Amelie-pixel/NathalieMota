@@ -1,32 +1,68 @@
+////////////////////////// code pour le hover de la miniature //////////////////////////
+
+document.addEventListener('DOMContentLoaded', function() {
+    const previousArrow = document.querySelector('.arrow_left');
+    const nextArrow = document.querySelector('.arrow_right');
+    const previousThumbnail = document.querySelector('.previous-thumbnail');
+    const nextThumbnail = document.querySelector('.next-thumbnail');
+
+    previousArrow.addEventListener('mouseover', function() {
+        previousThumbnail.classList.remove('hidden-thumbnail');
+    });
+
+    previousArrow.addEventListener('mouseout', function() {
+        previousThumbnail.classList.add('hidden-thumbnail');
+    });
+
+    nextArrow.addEventListener('mouseover', function() {
+        nextThumbnail.classList.remove('hidden-thumbnail');
+    });
+
+    nextArrow.addEventListener('mouseout', function() {
+        nextThumbnail.classList.add('hidden-thumbnail');
+    });
+});
+
+////////////////////////// code pour la référence dans la modal contact //////////////////////////
+
+jQuery(document).ready(function($) {
+    // Récupération de la valeur de l'ACF "reference" depuis le champ caché
+    var refPhotoValue = $('.refPhotoValue').val();
+    // Vérification si la valeur existe et si le champ REF.PHOTO existe dans le formulaire
+    if (refPhotoValue && $('.refPhoto').length) {
+        // Pré-remplissage du champ REF.PHOTO avec la valeur de l'ACF
+        $('.refPhoto').val(refPhotoValue);
+    }
+});
+
+////////////////////////// code pour le menu hamburger //////////////////////////
+
 document.addEventListener('DOMContentLoaded', function () {
     const burgerIcon = document.getElementById('burger-icon');
     const sideNav = document.getElementById('mySidenav');
 
-    // Fonction pour ouvrir/fermer la navigation
+
     function toggleSideNav() {
         burgerIcon.classList.toggle('active');
         if (sideNav.classList.contains('active')) {
-            // Fermer le menu
             sideNav.classList.remove('active');
             setTimeout(() => {
                 sideNav.classList.add('hidden');
-            }, 500);  // Durée de l'animation de fermeture
+            }, 500); 
         } else {
             // Ouvrir le menu
             sideNav.classList.remove('hidden');
             setTimeout(() => {
                 sideNav.classList.add('active');
-            }, 10);  // Laisser un léger délai pour appliquer la classe hidden
+            }, 10); 
         }
     }
 
-    // Empêche d'autres actions indésirables ailleurs sur la page, mais se concentrera uniquement sur l'ouverture ou la fermeture de la barre de navigation.
     burgerIcon.addEventListener('click', function (event) {
         event.stopPropagation(); 
         toggleSideNav();
     });
 
-    // Fermer la navigation lorsqu'un lien à l'intérieur est cliqué
     sideNav.addEventListener('click', function (event) {
         if (event.target.tagName === 'A') {
             toggleSideNav();
@@ -34,65 +70,146 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-
-
-jQuery(document).ready(function($) {
-    $('#filter-form select').change(function() {
-        var formData = $('#filter-form').serialize(); // Récupérer les données du formulaire
-
-        // Effectuer une requête Ajax vers l'API de WordPress
-        $.ajax({
-            type: 'GET',
-            url: ajaxurl, // Utilisation de la variable ajaxurl définie dans index.php
-            data: formData + '&action=custom_filter_photos', // Changer l'action en fonction de votre fonction PHP
-            success: function(response) {
-                $('#results-container').html(response); // Afficher les résultats dans le conteneur
-            }
-        });
-    });
-});
+////////////////////////// code pour la requete ajax des menus déroulant et du bouton charger plus//////////////////////////
 
 jQuery(document).ready(function($) {
-    $('#load-more').click(function() {
-        var formData = $('#filter-form').serialize(); // Récupérer les données du formulaire
-
-        // Effectuer une requête Ajax vers l'API de WordPress
-        $.ajax({
-            type: 'GET',
-            url: ajaxurl, // Utilisation de la variable ajaxurl définie dans index.php
-            data: formData + '&action=custom_filter_photos&all_photos=true', // Ajout du paramètre pour récupérer toutes les photos
-            success: function(response) {
-                $('#results-container').html(response); // Afficher les résultats dans le conteneur
-            }
-        });
-    });
-});
-
-function setupModal(buttonId) {
-    var modal = document.getElementById('myModal');
-    var btn = document.getElementById(buttonId);
-    var span = document.getElementsByClassName("close")[0];
-
-    btn.onclick = function() {
-        modal.style.display = "block";
+    // Fonction pour fermer tous les menus déroulants
+    function closeDropdowns() {
+        $('.custom-dropdown').removeClass('open');
     }
 
-    span.onclick = function() {
-        modal.style.display = "none";
-    }
-
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
+    // Gérer les clics sur les éléments de menu déroulant
+    $('.custom-dropdown .dropdown-placeholder').click(function() {
+        var $dropdown = $(this).parent('.custom-dropdown');
+        if ($dropdown.hasClass('open')) {
+            closeDropdowns();
+        } else {
+            closeDropdowns();
+            $dropdown.addClass('open');
         }
-    }
+    });
+
+    $('.custom-dropdown .dropdown-list li').click(function() {
+        var selectedValue = $(this).attr('data-value');
+        var selectedText = $(this).text();
+        var $dropdown = $(this).closest('.custom-dropdown');
+
+        $dropdown.find('.dropdown-placeholder').text(selectedText);
+        $dropdown.find('input[type="hidden"]').val(selectedValue);
+        $dropdown.removeClass('open');
+
+        // Effectuer la requête AJAX
+        var formData = $('#filter-form').serialize();
+        $.ajax({
+            type: 'GET',
+            url: ajaxurl,
+            data: formData + '&action=custom_filter_photos&nonce=' + nonce,
+            success: function(response) {
+                $('#results-container').html(response);
+            }
+        });
+    });
+
+    // Gérer les clics en dehors des menus déroulants
+    $(document).click(function(event) {
+        if (!$(event.target).closest('.custom-dropdown').length) {
+            closeDropdowns();
+        }
+    });
+
+    // Empêcher la propagation des clics à partir des menus déroulants
+    $('.custom-dropdown').click(function(event) {
+        event.stopPropagation();
+    });
+
+    $('#load-more').click(function() {
+        var formData = $('#filter-form').serialize();
+
+        $.ajax({
+            type: 'GET',
+            url: ajaxurl,
+            data: formData + '&action=custom_filter_photos&all_photos=true&nonce=' + nonce,
+            success: function(response) {
+                $('#results-container').html(response);
+            }
+        });
+    });
+});
+
+
+////////////////////////// code pour la modal contact //////////////////////////
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn3");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+    modal.style.display = "block";
 }
 
-// Setup modal for header button
-setupModal("myBtn");
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
 
-// Setup modal for image description button
-setupModal("myBtn2");
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+// Get the modal
+var modal = document.getElementById('myModal');
 
-// Setup modal for image description button
-setupModal("myBtn3");
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn2");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}

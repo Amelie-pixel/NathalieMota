@@ -19,7 +19,7 @@
     max-height: 800px;
 }
 
-.close {
+.close2 {
     position: absolute;
     top: 50px;
     right: 35px;
@@ -30,7 +30,7 @@
     cursor: pointer;
 }
 
-.close:hover, .close2:focus {
+.close2:hover, .close2:focus {
     color: #bbb;
     text-decoration: none;
     cursor: pointer;

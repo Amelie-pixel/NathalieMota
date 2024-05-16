@@ -13,6 +13,5 @@
         <p>Sorry, no page was found!</p>
       </article>
 <?php endif; ?>
-  </section><?php get_sidebar(); ?>
 </main>
 <?php get_footer(); ?>

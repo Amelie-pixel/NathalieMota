@@ -1,6 +1,6 @@
 <footer>
     <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-        <span class="close" onclick="closeLightbox()">&times;</span>
+        <span class="close2" onclick="closeLightbox()">&times;</span>
         <div class="lightbox-nav">
     <div class="lightbox-nav2">
         <div class="contentlightbox">
