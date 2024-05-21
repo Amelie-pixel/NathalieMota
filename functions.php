@@ -1,19 +1,19 @@
 <?php
 
-// This function enqueues the Normalize.css for use. The first parameter is a name for the stylesheet, the second is the URL. Here we
-// use an online version of the css file.
 function add_normalize_CSS() {
     wp_enqueue_style( 'normalize-styles', "https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css");
 }
+
+
 /// widget ///
 function add_widget_Support() {
     register_sidebar( array(
-                    'name'          => 'Sidebar',
-                    'id'            => 'sidebar',
-                    'before_widget' => '<div>',
-                    'after_widget'  => '</div>',
-                    'before_title'  => '<h2>',
-                    'after_title'   => '</h2>',
+        'name'          => 'Sidebar',
+        'id'            => 'sidebar',
+        'before_widget' => '<div>',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2>',
+        'after_title'   => '</h2>',
     ) );
 }
 add_action( 'widgets_init', 'add_Widget_Support' );
@@ -24,8 +24,8 @@ add_action( 'widgets_init', 'add_Widget_Support' );
 function add_Main_Nav() {
     register_nav_menu('header-menu',__( 'Header Menu' ));
 }
-  // Hook to the init action hook, run our navigation menu function
 add_action( 'init', 'add_Main_Nav' );
+
 
 /// Menu Footer ///
 
@@ -33,6 +33,7 @@ function add_Footer_Nav() {
     register_nav_menu('footer-menu',__( 'Footer Menu' ));
 }
 add_action( 'init', 'add_Footer_Nav' );
+
 
 /// Gesion des scripts ///
 
@@ -54,9 +55,7 @@ add_action('wp_ajax_nopriv_custom_filter_photos', 'custom_filter_photos');
 
 /// Menu déroulant ///
 
-// Ajouter les actions Ajax dans votre fichier functions.php
 function custom_filter_photos() {
-    // Vérifier le nonce pour sécuriser la requête
     $nonce = isset($_GET['nonce']) ? $_GET['nonce'] : '';
     if (!wp_verify_nonce($nonce, 'custom_filter_nonce')) {
         wp_die('Invalid nonce');
@@ -68,7 +67,7 @@ function custom_filter_photos() {
 
     $args = array(
         'post_type' => 'photos',
-        'posts_per_page' => isset($_GET['all_photos']) ? -1 : 8, // Charger toutes les photos si 'all_photos' est défini
+        'posts_per_page' => isset($_GET['all_photos']) ? -1 : 8,
         'orderby' => 'date',
         'order' => ($order === 'date_asc') ? 'ASC' : 'DESC',
     );

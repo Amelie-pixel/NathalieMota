@@ -1,4 +1,7 @@
+<!-- Ajout des informations du header -->
 <?php get_header(); ?>
+
+<!-- Ajout des informations de la page par defaut -->
 <main class="wrap">
   <section class="content-area content-thin">
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -14,4 +17,5 @@
       </article>
 <?php endif; ?>
 </main>
+<!-- Ajout des informations du footer -->
 <?php get_footer(); ?>

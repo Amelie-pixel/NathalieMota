@@ -26,11 +26,9 @@ document.addEventListener('DOMContentLoaded', function() {
 ////////////////////////// code pour la référence dans la modal contact //////////////////////////
 
 jQuery(document).ready(function($) {
-    // Récupération de la valeur de l'ACF "reference" depuis le champ caché
+
     var refPhotoValue = $('.refPhotoValue').val();
-    // Vérification si la valeur existe et si le champ REF.PHOTO existe dans le formulaire
     if (refPhotoValue && $('.refPhoto').length) {
-        // Pré-remplissage du champ REF.PHOTO avec la valeur de l'ACF
         $('.refPhoto').val(refPhotoValue);
     }
 });
@@ -73,12 +71,11 @@ document.addEventListener('DOMContentLoaded', function () {
 ////////////////////////// code pour la requete ajax des menus déroulant et du bouton charger plus//////////////////////////
 
 jQuery(document).ready(function($) {
-    // Fonction pour fermer tous les menus déroulants
+
     function closeDropdowns() {
         $('.custom-dropdown').removeClass('open');
     }
 
-    // Gérer les clics sur les éléments de menu déroulant
     $('.custom-dropdown .dropdown-placeholder').click(function() {
         var $dropdown = $(this).parent('.custom-dropdown');
         if ($dropdown.hasClass('open')) {
@@ -110,14 +107,12 @@ jQuery(document).ready(function($) {
         });
     });
 
-    // Gérer les clics en dehors des menus déroulants
     $(document).click(function(event) {
         if (!$(event.target).closest('.custom-dropdown').length) {
             closeDropdowns();
         }
     });
 
-    // Empêcher la propagation des clics à partir des menus déroulants
     $('.custom-dropdown').click(function(event) {
         event.stopPropagation();
     });
@@ -138,76 +133,64 @@ jQuery(document).ready(function($) {
 
 
 ////////////////////////// code pour la modal contact //////////////////////////
-// Get the modal
-var modal = document.getElementById('myModal');
 
-// Get the button that opens the modal
+///////////// la modal contact du menu déroulant header /////////////
+
+var modal = document.getElementById('myModal');
 var btn = document.getElementById("myBtn3");
-
-// Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks on the button, open the modal
+
 btn.onclick = function() {
     modal.style.display = "block";
 }
 
-// When the user clicks on <span> (x), close the modal
 span.onclick = function() {
     modal.style.display = "none";
 }
 
-// When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
 }
-// Get the modal
-var modal = document.getElementById('myModal');
 
-// Get the button that opens the modal
+
+///////////// la modal contact du menu header /////////////
+
+var modal = document.getElementById('myModal');
 var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks on the button, open the modal
 btn.onclick = function() {
     modal.style.display = "block";
 }
 
-// When the user clicks on <span> (x), close the modal
 span.onclick = function() {
     modal.style.display = "none";
 }
 
-// When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
 }
-// Get the modal
+
+
+///////////// la modal contact de la page info des photos /////////////
+
 var modal = document.getElementById('myModal');
-
-// Get the button that opens the modal
 var btn = document.getElementById("myBtn2");
-
-// Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks on the button, open the modal
 btn.onclick = function() {
     modal.style.display = "block";
 }
 
-// When the user clicks on <span> (x), close the modal
 span.onclick = function() {
     modal.style.display = "none";
 }
 
-// When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";

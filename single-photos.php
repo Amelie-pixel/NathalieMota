@@ -1,76 +1,82 @@
+<!-- Ajout des informations du header -->
 <?php get_header(); ?>
 
 
 <div class="contenu">
     <div class="detail-photo flexcolumn">
+
+    <!-- Ajout des informations concernant la photo + la photo -->
         <div class="photo-info">
-        <div class="flex-Description flexcolumn">
-            <h1><?php the_title(); ?></h1>
-            <ul class="flexcolumn">
-                <li><p> Référence : <span id="reference-photo"><?php echo get_field('reference'); ?></span></p></li>
-                <li><?php
-                    $terms = get_the_terms( $post->ID, 'categorie' );
-                    if ( $terms && ! is_wp_error( $terms ) ) :
-                        foreach ( $terms as $term ) :
-                    ?>
-                            <a href="<?php echo get_term_link( $term ); ?>"><p>Catégories : <?php echo $term->name; ?></p></a>
-                    <?php
-                        endforeach;
-                    endif;
-                    ?> </li>
-                <li><?php
-                    $terms = get_the_terms( $post->ID, 'formats' );
-                    if ( $terms && ! is_wp_error( $terms ) ) :
-                        foreach ( $terms as $term ) :
-                    ?>
-                            <a href="<?php echo get_term_link( $term ); ?>"><p>Formats : <?php echo $term->name; ?></p></a>
-                    <?php
-                        endforeach;
-                    endif;
-                    ?> </li>
-                <li><p> Type : <?php echo get_field('type'); ?></p></li>
-                <li><p> Années : <?php echo get_the_time('Y'); ?></p></li>
-            </ul>
-        </div>
-        <?php while ( have_posts() ) : the_post(); ?>
-        <div class="flex-Photo"><?php the_content(); ?></div>
-        <?php endwhile; ?>
+            <div class="flex-Description flexcolumn">
+                <h1><?php the_title(); ?></h1>
+                <ul class="flexcolumn">
+                    <li><p> Référence : <span id="reference-photo"><?php echo get_field('reference'); ?></span></p></li>
+                    <li><?php
+                        $terms = get_the_terms( $post->ID, 'categorie' );
+                        if ( $terms && ! is_wp_error( $terms ) ) :
+                            foreach ( $terms as $term ) :
+                        ?>
+                                <a href="<?php echo get_term_link( $term ); ?>"><p>Catégories : <?php echo $term->name; ?></p></a>
+                        <?php
+                            endforeach;
+                        endif;
+                        ?> 
+                    </li>
+                    <li><?php
+                        $terms = get_the_terms( $post->ID, 'formats' );
+                        if ( $terms && ! is_wp_error( $terms ) ) :
+                            foreach ( $terms as $term ) :
+                        ?>
+                                <a href="<?php echo get_term_link( $term ); ?>"><p>Formats : <?php echo $term->name; ?></p></a>
+                        <?php
+                            endforeach;
+                        endif;
+                        ?> 
+                    </li>
+                    <li><p> Type : <?php echo get_field('type'); ?></p></li>
+                    <li><p> Années : <?php echo get_the_time('Y'); ?></p></li>
+                </ul>
+            </div>
+            <?php while ( have_posts() ) : the_post(); ?>
+            <div class="flex-Photo"><?php the_content(); ?></div>
+            <?php endwhile; ?>
         </div>
     </div>
+
+    <!-- Ajout des informations concernant le bouton contact + des miniatures suivant/précédent -->
     <div class="deuxieme_partie">
         <p> Cette photo vous intéresse ?</p>
-        <!-- Trigger/Open The Modal -->
         <button id="myBtn2">Contact</button>
         <div class="arrow_post flexcolumn">
             <div class="photo_next_previous flexrow">
                 <?php 
-                    $previous_post = get_previous_post();
-                    $next_post = get_next_post();
+                $previous_post = get_previous_post();
+                $next_post = get_next_post();
 
-                    if (!empty($previous_post)) {
-                            $previous_thumbnail = get_the_post_thumbnail($previous_post, 'thumbnail', array('class' => 'previous-thumbnail hidden-thumbnail'));
-                            if (!empty($previous_thumbnail)) {
-                                echo $previous_thumbnail;
-                            }
-                    }
+                if (!empty($previous_post)) {
+                        $previous_thumbnail = get_the_post_thumbnail($previous_post, 'thumbnail', array('class' => 'previous-thumbnail hidden-thumbnail'));
+                        if (!empty($previous_thumbnail)) {
+                            echo $previous_thumbnail;
+                        }
+                }
 
-                    if (!empty($next_post)) { 
-                            $next_thumbnail = get_the_post_thumbnail($next_post, 'thumbnail', array('class' => 'next-thumbnail hidden-thumbnail'));
-                            if (!empty($next_thumbnail)) {
-                                echo $next_thumbnail;
-                            }
-                    }
+                if (!empty($next_post)) { 
+                        $next_thumbnail = get_the_post_thumbnail($next_post, 'thumbnail', array('class' => 'next-thumbnail hidden-thumbnail'));
+                        if (!empty($next_thumbnail)) {
+                            echo $next_thumbnail;
+                        }
+                }
                 ?>
             </div>
             <div class="previous_next_post flexrow">    
                 <div class="arrow_left">               
                     <?php 
-                        if (!empty($previous_post)) {
-                            echo '<a href="' . get_permalink($previous_post) . '" class="nav-icon-link previous-icon-link">' .
-                            '<svg xmlns="http://www.w3.org/2000/svg" width="26" height="8" viewBox="0 0 26 8" fill="none">' .
-                            '<path d="M0.646447 3.64645C0.451184 3.84171 0.451184 4.15829 0.646447 4.35355L3.82843 7.53553C4.02369 7.7308 4.34027 7.7308 4.53553 7.53553C4.7308 7.34027 4.7308 7.02369 4.53553 6.82843L1.70711 4L4.53553 1.17157C4.7308 0.976311 4.7308 0.659728 4.53553 0.464466C4.34027 0.269204 4.02369 0.269204 3.82843 0.464466L0.646447 3.64645ZM1 4.5H26V3.5H1V4.5Z" fill="black"/>' .
-                            '</svg></a>';
-                        }
+                    if (!empty($previous_post)) {
+                        echo '<a href="' . get_permalink($previous_post) . '" class="nav-icon-link previous-icon-link">' .
+                        '<svg xmlns="http://www.w3.org/2000/svg" width="26" height="8" viewBox="0 0 26 8" fill="none">' .
+                        '<path d="M0.646447 3.64645C0.451184 3.84171 0.451184 4.15829 0.646447 4.35355L3.82843 7.53553C4.02369 7.7308 4.34027 7.7308 4.53553 7.53553C4.7308 7.34027 4.7308 7.02369 4.53553 6.82843L1.70711 4L4.53553 1.17157C4.7308 0.976311 4.7308 0.659728 4.53553 0.464466C4.34027 0.269204 4.02369 0.269204 3.82843 0.464466L0.646447 3.64645ZM1 4.5H26V3.5H1V4.5Z" fill="black"/>' .
+                        '</svg></a>';
+                    }
                     ?>
                 </div>
                 <div class="arrow_right">
@@ -86,10 +92,12 @@
             </div>
         </div>
     </div>
+
+    <!-- Ajout des informations concernant les deux photos en lien avec celle regardé -->
     <div class="troisieme_partie">
         <h2 class="aimer_aussi flexrow"> Vous aimerez aussi </h2>
         <div class="deux_post flexrow">
-        <?php
+            <?php
             $current_post_id = get_the_ID();
 
             if (has_term($category_name, 'categorie')) {
@@ -123,7 +131,9 @@
                 wp_reset_postdata();
             }
             ?>
-            </div>
         </div>
+    </div>
 </div>
+
+<!-- Ajout des informations du footer -->
 <?php get_footer() ?>

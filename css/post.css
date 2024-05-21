@@ -2,6 +2,7 @@
     justify-content: flex-end;
     border-bottom: 1px solid black;
 }
+
 .photo-info {
     display: flex;
     flex-direction: row;

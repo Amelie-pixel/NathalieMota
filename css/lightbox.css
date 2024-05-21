@@ -37,7 +37,7 @@
 }
 
 .open-lightbox {
-    cursor: pointer; /* Change l'aspect de la souris en "pointer" */
+    cursor: pointer;
 }
 
 .lightbox-categorie, .lightbox-reference {
@@ -71,7 +71,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    cursor: pointer; /* Ajout d'un curseur pointer pour indiquer que les flèches sont cliquables */
+    cursor: pointer; 
 }
 
 .prev {
@@ -91,14 +91,17 @@
     right: 20%;
     top: 4px;
 }
+
 .nextbutton {
     position: relative;
     left: 120%;
     top: 4px;
 }
+
 .prev:hover, .next:hover{
     font-weight: 700 !important;
 }
+
 .contentlightbox {
     display: flex;
     flex-direction: row;

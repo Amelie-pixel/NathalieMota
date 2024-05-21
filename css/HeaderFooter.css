@@ -16,6 +16,7 @@
     position: relative;
     top: 10px;
 }
+
 .header-menu-class a {
     text-decoration: none;
     font-family: 'Space Mono';
@@ -28,6 +29,7 @@
 .header-menu-class a:hover {
     font-weight: 700 !important;
 }
+
 .header-menu-class li {
     display: inline;
     margin-right: 20px;
@@ -47,13 +49,16 @@
     display: inline;
     margin-right: 20px;
 }
+
 .footer-menu-class a {
     font-weight: 400;
     text-transform: uppercase;   
 }
+
 .footer-menu-class a:hover {
     font-weight: 700;
 }
+
 .entete {
     height: 80px;
     display: flex;
@@ -74,8 +79,9 @@
 .sidenav.hidden {
     display: none;
 }
+
 .sidenav.moved {
-    transform: translateY(-1500px);  /* Hors de l'écran */
+    transform: translateY(-1500px);  
 }
   
 .sidenav {
@@ -88,10 +94,11 @@
     top: 94px;
     overflow: hidden;
     background-color: #E00000;
-    transform: translateY(-300px);  /* Position initiale en dehors de l'écran */
-    transition: transform 0.5s ease, opacity 0.5s ease;  /* Animation de transition */
+    transform: translateY(-300px); 
+    transition: transform 0.5s ease, opacity 0.5s ease;  
 }
-  .sidenav a {
+
+.sidenav a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 64px;
@@ -101,8 +108,8 @@
 }
 
 .sidenav.active {
-    transform: translateY(0);  /* Position finale à l'écran */
-    opacity: 1;  /* Complètement visible */
+    transform: translateY(0);  
+    opacity: 1;  
 }
 
 .blocknav {
@@ -114,6 +121,7 @@
     z-index: 1000;
     display: flex;
 }
+
 .burger-icon {
     position: relative;
     left: 65%;
@@ -131,15 +139,15 @@
 }
 
   
-  /* Styles pour transformer l'icône en croix */
-  .burger-icon.active span:nth-child(1) {
-    transform: rotate(45deg) translate(7px, 7px);
-  }
-  
-  .burger-icon.active span:nth-child(2) {
-    opacity: 0;
-  }
-  
-  .burger-icon.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -7px);
-  }
+/* Styles pour transformer l'icône en croix */
+.burger-icon.active span:nth-child(1) {
+transform: rotate(45deg) translate(7px, 7px);
+}
+
+.burger-icon.active span:nth-child(2) {
+opacity: 0;
+}
+
+.burger-icon.active span:nth-child(3) {
+transform: rotate(-45deg) translate(7px, -7px);
+}

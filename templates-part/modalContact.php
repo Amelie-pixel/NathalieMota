@@ -1,6 +1,6 @@
-<!-- The Modal -->
+<!-- la Modal -->
 <div id="myModal" class="modal">
-  <!-- Modal content -->
+  <!-- contenu de la modal -->
   <div class="modal-content">
     <div class="modal-header">
       <span class="close"></span>
