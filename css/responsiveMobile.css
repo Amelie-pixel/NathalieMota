@@ -1,0 +1,162 @@
+@media (max-width:550px) {
+    .groupe {
+        padding-left: 68px;
+    }
+    .photo-block__picture__img {
+        width: 70vw !important;
+        height: 30vh !important;
+    }
+
+    .photo-block__picture__img_container {
+        height: 30vh !important;
+    }
+
+    .photo-block__picture {
+        height: 30vh !important;
+    }
+    .photo-block__picture__img_hover {
+        bottom: 30.5vh !important;
+        height: 30vh !important;
+    }
+    .oeil {
+        top: 110px !important;
+        }
+    .ref_cat {
+        top: 140px !important;
+    }
+    .fullscreen {
+        left: 82% !important;
+    }
+    #myBtn3 {
+        left: 4%;
+    }
+    .flex-Description h1{
+        font-size: 40px;
+    }
+}
+
+@media (max-width:450px) {
+    .my-logo {
+        right: 19%;
+    }
+    .title_photo_event {
+        font-size: 30px;
+    }
+    .index_background {
+        width: 109%;
+    }
+    .groupe {
+        padding-left: 50px;
+    }
+    .photo-block__picture__img {
+        width: 70vw !important;
+        height: 30vh !important;
+    }
+
+    .photo-block__picture__img_container {
+        height: 30vh !important;
+    }
+
+    .photo-block__picture {
+        height: 30vh !important;
+    }
+    .photo-block__picture__img_hover {
+        bottom: 30.5vh !important;
+        height: 30vh !important;
+    }
+    .oeil {
+        top: 110px !important;
+        }
+    .ref_cat {
+        top: 140px !important;
+    }
+    .fullscreen {
+        left: 82% !important;
+    }
+    .sidenav {
+        right: -40.6%;
+        width: 178.2%;
+        top: 74px;
+    }
+    .sidenav a {
+        font-size: 40px;
+    }
+    #myBtn3 {
+        font-size: 40px;
+        top: 80px;
+        left: -3%;
+    }
+    .header-menu-class {
+        right: 10%;
+    }
+}
+
+@media (max-width:400px) {
+    .groupe {
+        padding-left: 40px;
+    }
+    .title_photo_event {
+        font-size: 20px;
+        padding-top: 150px;
+    }
+    .photo-block__picture__img {
+        width: 50vw !important;
+        height: 30vh !important;
+    }
+
+    .photo-block__picture__img_container {
+        height: 30vh !important;
+    }
+
+    .photo-block__picture {
+        height: 30vh !important;
+    }
+    .photo-block__picture__img_hover {
+        bottom: 30.9vh !important;
+        height: 30vh !important;
+    }
+    .oeil {
+        top: 60px !important;
+        width: 10%;
+        }
+    .ref_cat {
+        top: 75px !important;
+        font-size: 5px !important;
+    }
+    .fullscreen {
+        left: 87% !important;
+        bottom: 20px !important;
+    }
+    #fullscreen {
+        width: 100%;
+    }
+    .footer-menu-class {
+        position: relative;
+        padding-left: 10%;
+    }
+    .btn_chargerplus {
+        margin-left: 5%;
+    }
+    .sidenav {
+        right: -40.6%;
+        width: 178.3%;
+        top: 67px;
+    }
+    .sidenav a {
+        font-size: 20px;
+    }
+    #myBtn3 {
+        font-size: 20px;
+        top: 80px;
+        left: 1%;
+    }
+    .header-menu-class {
+        right: 10%;
+    }
+    #filter-form {
+        padding-right: 0;
+    }
+    .custom-select {
+        margin-right: -2px;
+    }
+}
