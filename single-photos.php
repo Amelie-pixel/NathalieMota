@@ -16,7 +16,7 @@
                         if ( $terms && ! is_wp_error( $terms ) ) :
                             foreach ( $terms as $term ) :
                         ?>
-                                <a href="<?php echo get_term_link( $term ); ?>"><p>Catégories : <?php echo $term->name; ?></p></a>
+                                <a class="no-click" href="<?php echo get_term_link( $term ); ?>"><p>Catégories : <?php echo $term->name; ?></p></a>
                         <?php
                             endforeach;
                         endif;
@@ -27,7 +27,7 @@
                         if ( $terms && ! is_wp_error( $terms ) ) :
                             foreach ( $terms as $term ) :
                         ?>
-                                <a href="<?php echo get_term_link( $term ); ?>"><p>Formats : <?php echo $term->name; ?></p></a>
+                                <a class="no-click" href="<?php echo get_term_link( $term ); ?>"><p>Formats : <?php echo $term->name; ?></p></a>
                         <?php
                             endforeach;
                         endif;

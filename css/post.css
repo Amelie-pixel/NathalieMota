@@ -8,6 +8,10 @@
     flex-direction: row;
 }
 
+.no-click {
+    pointer-events: none;
+}
+
 .flex-Description ul {
     list-style-type : none;
     padding-left: 0;
