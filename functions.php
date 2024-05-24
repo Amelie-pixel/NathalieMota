@@ -1,5 +1,7 @@
 <?php
 
+/// cloudflare ajax ///
+
 function add_normalize_CSS() {
     wp_enqueue_style( 'normalize-styles', "https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css");
 }
@@ -136,4 +138,3 @@ function add_custom_styles() {
     wp_enqueue_style('responsiveMobile-styles');
 }
 add_action('wp_enqueue_scripts', 'add_custom_styles');
-
